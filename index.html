@@ -1,5 +1,7 @@
 ---
 layout: default
+- include
+  jquery.md
 ---
 
 <p>
@@ -47,3 +49,19 @@ Tak właśnie myślałem. &#128513; Jeśli chcesz przybliżyć się do rozwiąza
 <p>
 <input />
 </p>
+
+<script>
+  var btn = document.querySelector('#tak_btn');
+  
+  btn.addEventListener('mouseover', function() {
+      // mouse is hovering over this element
+    btn.style.color = '#f01';
+  });
+
+  btn.addEventListener('mouseout', function() {
+      // mouse was hovering over this element, but no longer is
+    btn.style.color = '#01f';
+  });
+  
+  
+</script>
