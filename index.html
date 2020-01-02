@@ -51,13 +51,13 @@ Tak właśnie myślałem. &#128513; Jeśli chcesz przybliżyć się do rozwiąza
 <script>
   var btn_wrapper = document.querySelector('#tak_btn_wrapper');
   var btn = document.querySelector('#tak_btn');
-  var rand = Math.random();
   
   btn_wrapper.addEventListener('mouseover', function() {
       // mouse is hovering over this element
+    var rand = Math.random() * 2 * Math.PI;
     btn.style.position = 'relative';
-    btn.style.left = Math.sin(rand) *  + 'px';
-    btn.style.top = Math.cos(rand) *  + 'px';
+    btn.style.left = Math.sin(rand) + 'px';
+    btn.style.top = Math.cos(rand) + 'px';
   });
 
   btn_wrapper.addEventListener('mouseout', function() {
