@@ -2,14 +2,14 @@
 layout: default
 ---
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script-->
 <script>
   
 </script>
 
 <style>
   #tak_btn:hover {
-    visibility: hidden;
+    display: none;
   }
 </style>
 
@@ -24,6 +24,10 @@ Pozwól, że zapytam... czy chciałbyś już dostać swój prezent?
 <div style="width: 100%; display: inline-flex;
             flex-direction: row;
             justify-content: space-evenly;">
-  <button id="tak_btn" type="button">TAK!!!</button>
-  <button id="nie_btn" type="button">Jeszcze nie chcę...</button>
+  <div style="width: 50%;">
+    <button id="tak_btn" type="button">TAK!!!</button>
+  </div>
+  <div style="width: 50%;">
+    <button id="nie_btn" type="button">Jeszcze nie chcę...</button>
+  </div>
 </div>
