@@ -2,17 +2,15 @@
 layout: default
 ---
 
-<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-  
+  $("#tak_btn_wrapper").hover(function(){
+    $("#tak_btn").css("position", "relative");
+    $("#tak_btn").css("left", "-200px;");
+    }, function(){
+    $("#tak_btn").css("position", "inherit");
+  });
 </script>
-
-<style>
-  #tak_btn:hover {
-    position: relative;
-    left: -50px;
-  }
-</style>
 
 <p>
 Widzę, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. Dalej powinno być już tylko z górki...
@@ -37,7 +35,7 @@ Pozwól, że zapytam... czy chciałbyś już dostać swój prezent?
   /* Then we define how is distributed the remaining space */
   justify-content: space-around;">
   
-  <div style="width: 50%;
+  <div id="tak_btn_wrapper" style="width: 50%;
   display: flex;
   justify-content: center;">
     <button id="tak_btn" type="button">TAK!!!</button>
