@@ -21,12 +21,28 @@ Widzę, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. Dalej p
 Pozwól, że zapytam... czy chciałbyś już dostać swój prezent?
 </p>
 
+<div style="width: 100%; height:30px;
+  /* We first create a flex layout context */
+  display: flex;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;">
+  
+  <div style="width: 50%;">
+    <button id="tak_btn" style="margin: 0 auto" type="button">TAK!!!</button>
+  </div>
+  <div style="width: 50%;">
+    <button id="nie_btn" style="margin: 0 auto" type="button">Jeszcze nie chcę...</button>
+  </div>
 <div style="width: 50%; height: 30px;">
-  <button id="tak_btn" type="button">TAK!!!</button>
-</div>
-<div style="width: 50%; height: 30px;">
-  <button id="nie_btn" type="button">Jeszcze nie chcę...</button>
-</div>
 
 
 <p>
