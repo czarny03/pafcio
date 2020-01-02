@@ -41,7 +41,7 @@ Pozwól, że zapytam... czy chciałbyś już dostać swój prezent?
   
 </div>
 
-
+<div id="zagadki" style="display:none;">
 <p>
 Tak właśnie myślałem. &#128513; Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu poniżej:
 </p>
@@ -54,23 +54,29 @@ Tak właśnie myślałem. &#128513; Jeśli chcesz przybliżyć się do rozwiąza
 Rozwiąż zagadkę z poniższego linku:
 <a target="_blank" href='https://www.griddlers.net/nonogram/-/g/i01?p_p_lifecycle=2&p_p_resource_id=griddlerHtml&p_p_cacheability=cacheLevelPage&_gpuzzles_WAR_puzzles_touchMode=false&_gpuzzles_WAR_puzzles_id=107607&_gpuzzles_WAR_puzzles_di=0&_gpuzzles_WAR_puzzles_ci=2&_gpuzzles_WAR_puzzles_filterName=&_gpuzzles_WAR_puzzles_sa=100&_gpuzzles_WAR_puzzles_n=vegeta&_gpuzzles_WAR_puzzles_p=0&_gpuzzles_WAR_puzzles_pa=1&_gpuzzles_WAR_puzzles_t=a&_gpuzzles_WAR_puzzles_th=0&_gpuzzles_WAR_puzzles_u=&_gpuzzles_WAR_puzzles_si=0&_gpuzzles_WAR_puzzles_action=show&_gpuzzles_WAR_puzzles_pi=1&_gpuzzles_WAR_puzzles_da=10000000000&_gpuzzles_WAR_puzzles_ca=8'>link</a>  
 </p>
+</div>
 
 <script>
-  var btn_wrapper = document.querySelector('#tak_btn_wrapper');
-  var btn = document.querySelector('#tak_btn');
+  var tak_btn_wrapper = document.querySelector('#tak_btn_wrapper');
+  var tak_btn = document.querySelector('#tak_btn');
+  var nie_btn = document.querySelector('#nie_btn');
+  var zagadki_div = document.querySelector('#zagadki');
   
-  btn_wrapper.addEventListener('mouseover', function() {
+  tak_btn_wrapper.addEventListener('mouseover', function() {
       // mouse is hovering over this element
     var rand = Math.random() * 2 * Math.PI;
-    btn.style.position = 'relative';
-    btn.style.left = Math.sin(rand) * 200 + 'px';
-    btn.style.top = Math.cos(rand) * 200 + 'px';
+    tak_btn.style.position = 'relative';
+    tak_btn.style.left = Math.sin(rand) * 200 + 'px';
+    tak_btn.style.top = Math.cos(rand) * 200 + 'px';
   });
 
-  btn_wrapper.addEventListener('mouseout', function() {
+  tak_btn_wrapper.addEventListener('mouseout', function() {
       // mouse was hovering over this element, but no longer is
-    btn.style.position = 'inherit';
+    tak_btn.style.position = 'inherit';
   });
   
+  nie_btn.addEventListener('click', function() {
+    zagadki.style.display = 'block';
+  });
   
 </script>
