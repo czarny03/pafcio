@@ -49,16 +49,18 @@ Tak właśnie myślałem. &#128513; Jeśli chcesz przybliżyć się do rozwiąza
 </p>
 
 <script>
+  var btn_wrapper = document.querySelector('#tak_btn_wrapper');
   var btn = document.querySelector('#tak_btn');
   
-  btn.addEventListener('mouseover', function() {
+  btn_wrapper.addEventListener('mouseover', function() {
       // mouse is hovering over this element
-    btn.style.color = '#f01';
+    btn.style.position = 'relative';
+    btn.style.left = '-200px';
   });
 
-  btn.addEventListener('mouseout', function() {
+  btn_wrapper.addEventListener('mouseout', function() {
       // mouse was hovering over this element, but no longer is
-    btn.style.color = '#01f';
+    btn.style.position = 'inherit';
   });
   
   
