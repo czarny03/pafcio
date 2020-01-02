@@ -7,6 +7,12 @@ layout: default
   
 </script>
 
+<style>
+  #tak_btn:hover {
+    display: none;
+  }
+</style>
+
 <p>
 Widzę, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. Dalej powinno być już tylko z górki...
 </p>
@@ -18,6 +24,6 @@ Pozwól, że zapytam... czy chciałbyś już dostać swój prezent?
 <div style="width: 100%; display: inline-flex;
             flex-direction: row;
             justify-content: space-evenly;">
-  <button type="button">TAK!!!</button>
-  <button type="button">Jeszcze nie...</button>
+  <button id="tak_btn" type="button">TAK!!!</button>
+  <button id="nie_btn" type="button">Jeszcze nie chcę...</button>
 </div>
