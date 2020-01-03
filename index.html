@@ -109,6 +109,26 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
 </div>
 
 <script>
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  
+  function showBalls() {
+    var cookie = getCookie('balls');
+  }
+  
   var tak_btn_wrapper = document.querySelector('#tak_btn_wrapper');
   var tak_btn = document.querySelector('#tak_btn');
   var nie_btn = document.querySelector('#nie_btn');
@@ -140,6 +160,10 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
   
   send_btn.addEventListener('click', function() {
     if (input.value.toLowerCase() == 'mąci') {
+      
+      document.cookie = "balls=5";
+      showBalls();
+      
       tresc.innerHTML = `<p>
       Rozwiąż zagadkę z poniższego linku:
       <a target="_blank" href='https://www.griddlers.net/pl_PL/nonogram/-/g/i01?p_p_lifecycle=2&p_p_resource_id=griddlerHtml&p_p_cacheability=cacheLevelPage&_gpuzzles_WAR_puzzles_touchMode=false&_gpuzzles_WAR_puzzles_id=146672&_gpuzzles_WAR_puzzles_id=146672&_gpuzzles_WAR_puzzles_view=detail'>link</a>
@@ -149,6 +173,9 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
         Jeśli potrzebujesz, tu są <a target="_blank" href='https://www.griddlers.net/pl/pages/g_rules'>zasady</a>
       </p>`;
     }
+    //else if () {
+    //  document.cookie = "username=John Doe";
+    //}
   });
   
 </script>
