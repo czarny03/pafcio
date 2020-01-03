@@ -148,10 +148,10 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
       for (var i = 0; i < ballsArray.length; i++) {
         var ball = document.querySelector('#ball' + ballsArray[i]);
         if (ball)
-          ball.addClass('verticalTranslate');
+          ball.classList.add('verticalTranslate');
           setTimeout(returnBall.bind(null, ball, ballsArray[i]), 1500);
           setTimeout(function() {
-            ball.removeClass('verticalTranslate');
+            ball.classList.remove('verticalTranslate');
           }, 3000);
       }
     }
