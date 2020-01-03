@@ -10,13 +10,13 @@ layout: default
   }
   
   .transform {                                 
-    transition: opacity 3000ms linear;
-    -webkit-transition: opacity 3000ms linear;
+    transition: opacity 2000ms linear;
+    -webkit-transition: opacity 2000ms linear;
   }
   
   .verticalTranslate {  
-    transition: 3000ms ease-in-out;
-    -webkit-transition: 3000ms ease-in-out;
+    transition: 2000ms ease-in-out;
+    -webkit-transition: 2000ms ease-in-out;
     transform: translate(0,-1000px);
     -webkit-transform: translate(0,-1000px);
   }
@@ -149,10 +149,10 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
         var ball = document.querySelector('#ball' + ballsArray[i]);
         if (ball)
           ball.classList.add('verticalTranslate');
-          setTimeout(returnBall.bind(null, ball, ballsArray[i]), 1500);
-          setTimeout(function() {
-            ball.classList.remove('verticalTranslate');
-          }, 3000);
+          setTimeout(returnBall.bind(null, ball, ballsArray[i]), 1000);
+          //setTimeout(function() {
+          //  ball.classList.remove('verticalTranslate');
+          //}, 3000);
       }
     }
   }
