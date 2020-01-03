@@ -13,6 +13,13 @@ layout: default
     transition: opacity 3000ms linear;
     -webkit-transition: opacity 3000ms linear;
   }
+  
+  .verticalTranslate {  
+    transition: 3000s ease-in-out;
+    -webkit-transition: 3000s ease-in-out;
+    transform: translate(0,-1000px);
+    -webkit-transform: translate(0,-1000px);
+  }
 </style>
   
 <p>
@@ -77,7 +84,7 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. D
     <img id="ball2" src="circle.png" position: relative; height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
     <img id="ball3" src="circle.png" position: relative; height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
     <img id="ball4" src="circle.png" position: relative; height="50" width="50" style="transition: 3000ms ease-in-out;" />
-    <img id="ball5" src="circle.png" position: relative; height="50" width="50" />
+    <img id="ball5" class="transform" src="circle.png" position: relative; height="50" width="50" />
     <img id="ball6" src="circle.png" position: relative; height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
     <img id="ball7" src="circle.png" position: relative; height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
 
@@ -141,11 +148,11 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
       for (var i = 0; i < ballsArray.length; i++) {
         var ball = document.querySelector('#ball' + ballsArray[i]);
         if (ball)
-          ball.style.transition = '3000s ease-in-out';
-          ball.style['-webkit-transition'] = '3000s ease-in-out';
-          ball.style.transform = 'translate(0,-1000px)';
-          ball.style['-webkit-transform'] = 'translate(0,-1000px)';
+          ball.addClass('verticalTranslate');
           setTimeout(returnBall.bind(null, ball, ballsArray[i]), 1500);
+          setTimeout(function( {
+            ball.removeClass('verticalTranslate');
+          }, 3000);
       }
     }
   }
