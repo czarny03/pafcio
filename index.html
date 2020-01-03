@@ -142,7 +142,9 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
         var ball = document.querySelector('#ball' + ballsArray[i]);
         if (ball)
           ball.style.transition = '3000s ease-in-out';
+          ball.style['-webkit-transition'] = '3000s ease-in-out';
           ball.style.transform = 'translate(0,-1000px)';
+          ball.style['-webkit-transform'] = 'translate(0,-1000px)';
           setTimeout(returnBall.bind(null, ball, ballsArray[i]), 1500);
       }
     }
