@@ -21,7 +21,7 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. D
 
 <div style="width: 100%; height:80px; position: relative">
 
-  <div id="buttony" class="transform" style="width: 100%; height:100%; position: relative; top: 0; z-index: 1;">
+  <div id="buttony" class="transform" style="width: 100%; height:100%; position: relative; top: 0; z-index: 2;">
     <p>
       A więc czy chciałbyś już dostać swój prezent?
     </p>
@@ -57,6 +57,31 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. D
 
   </div>
 
+  <div id="balls" class="transform" style="width: 100%; height:100%; position: relative; top: -80px; z-index: 1; opacity: 0;
+    /* We first create a flex layout context */
+    display: flex;
+
+    /* Then we define the flow direction 
+       and if we allow the items to wrap 
+     * Remember this is the same as:
+     * flex-direction: row;
+     * flex-wrap: wrap;
+     */
+    flex-flow: row wrap;
+
+    /* Then we define how is distributed the remaining space */
+    justify-content: space-around;">
+
+    <img id="ball1" src="circle.png" height="50" width="50" />
+    <img id="ball2" src="circle.png" height="50" width="50" />
+    <img id="ball3" src="circle.png" height="50" width="50" />
+    <img id="ball4" src="circle.png" height="50" width="50" />
+    <img id="ball5" src="circle.png" height="50" width="50" />
+    <img id="ball6" src="circle.png" height="50" width="50" />
+    <img id="ball7" src="circle.png" height="50" width="50" />
+
+  </div>
+  
 </div>
 
 <div id="zagadki" style="display:none;">
