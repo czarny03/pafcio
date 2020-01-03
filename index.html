@@ -23,15 +23,15 @@ A więc czy chciałbyś już dostać swój prezent?
   flex-flow: row wrap;
   
   /* Then we define how is distributed the remaining space */
-  justify-content: space-around;">
+  justify-content: space-around;
+                                   
+  transition: opacity 3s linear;
+  -webkit-transition: opacity 3s linear;">
   
   <div id="tak_btn_wrapper" style="width: 50%; height: 100%;
   display: flex;
   justify-content: center;           
-  align-items: center;
-                                   
-  transition: opacity 3s linear;
-  -webkit-transition: opacity 3s linear;">
+  align-items: center;">
     <button id="tak_btn" style="height: 30px;" ype="button">TAK!!!</button>
   </div>
   
@@ -97,6 +97,7 @@ i wpisz rozwiązanie w pole, aby przejść dalej :).
   
   nie_btn.addEventListener('click', function() {
     zagadki.style.display = 'block';
+    //buttony.style.transition = 'opacity 1000ms';
     buttony.style.display = 'none';
   });
   
