@@ -137,14 +137,6 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
     }
   }
   
-  (function ready() {
-    if (document.readyState !== 'loading') {
-      showBalls();
-    } else {
-      document.addEventListener('DOMContentLoaded', showBalls);
-    }
-  })();
-  
   var tak_btn_wrapper = document.querySelector('#tak_btn_wrapper');
   var tak_btn = document.querySelector('#tak_btn');
   var nie_btn = document.querySelector('#nie_btn');
@@ -167,6 +159,7 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
   });
   
   nie_btn.addEventListener('click', function() {
+    showBalls();
     zagadki_div.style.display = 'block';
     //buttony.style.transition = 'opacity 1000ms';
     buttony.style.opacity = '0';
