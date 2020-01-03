@@ -15,10 +15,17 @@ layout: default
   }
   
   .verticalTranslate {  
-    transition: 2000ms ease-in-out;
-    -webkit-transition: 2000ms ease-in-out;
+    transition: 1000ms ease-in-out;
+    -webkit-transition: 1000ms ease-in-out;
     transform: translate(0,-1000px);
     -webkit-transform: translate(0,-1000px);
+  }
+  
+  .verticalTranslateBack {  
+    transition: 1000ms ease-in-out;
+    -webkit-transition: 1000ms ease-in-out;
+    transform: translate(0,1000px);
+    -webkit-transform: translate(0,1000px);
   }
 </style>
   
@@ -84,7 +91,7 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. D
     <img id="ball2" src="circle.png" position: relative; height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
     <img id="ball3" src="circle.png" position: relative; height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
     <img id="ball4" src="circle.png" position: relative; height="50" width="50" style="transition: 3000ms ease-in-out;" />
-    <img id="ball5" class="transform" src="circle.png" position: relative; height="50" width="50" />
+    <img id="ball5" src="circle.png" position: relative; height="50" width="50" />
     <img id="ball6" src="circle.png" position: relative; height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
     <img id="ball7" src="circle.png" position: relative; height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
 
@@ -141,6 +148,14 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
     ball.src = 'Ball ' + k + ' Stars.png';
   }
   
+  function transitionBall(ball) {
+    ball.classList.remove('verticalTranslate');
+    ball.classList.add('verticalTranslateBack');
+    setTimeout(function() {
+      ball.classList.remove('verticalTranslateBack');
+    }, 1000);
+  }
+  
   function showBalls() {
     var balls = getCookie('pafcio_balls');
     if (balls != "") {
@@ -149,10 +164,8 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
         var ball = document.querySelector('#ball' + ballsArray[i]);
         if (ball)
           ball.classList.add('verticalTranslate');
-          setTimeout(returnBall.bind(null, ball, ballsArray[i]), 1000);
-          //setTimeout(function() {
-          //  ball.classList.remove('verticalTranslate');
-          //}, 3000);
+          setTimeout(returnBall.bind(null, ball, ballsArray[i]), 500);
+          setTimeout(transitionBall.bind(null, ball), 1000);
       }
     }
   }
