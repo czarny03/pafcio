@@ -25,8 +25,8 @@ A więc czy chciałbyś już dostać swój prezent?
   /* Then we define how is distributed the remaining space */
   justify-content: space-around;
                                    
-  transition: opacity 3000ms linear;
-  -webkit-transition: opacity 3000ms linear;">
+  transition: opacity 2000ms linear;
+  -webkit-transition: opacity 2000ms linear;">
   
   <div id="tak_btn_wrapper" style="width: 50%; height: 100%;
   display: flex;
@@ -55,19 +55,16 @@ Oczywiście, że nie chcesz, bo nie przeszedłeś jeszcze MOJEJ PRÓBY AHAHAHAHH
 Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu poniżej:
 </p>
 
-<p>
-<input />
-</p>
+<div style="display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;">
+  <input id="input" />
+  <button id="send_btn" >Wyślij</button>
+</div>
 
-<p>
-Rozwiąż zagadkę z poniższego linku:
-<a target="_blank" href='https://www.griddlers.net/pl_PL/nonogram/-/g/i01?p_p_lifecycle=2&p_p_resource_id=griddlerHtml&p_p_cacheability=cacheLevelPage&_gpuzzles_WAR_puzzles_touchMode=false&_gpuzzles_WAR_puzzles_id=146672&_gpuzzles_WAR_puzzles_id=146672&_gpuzzles_WAR_puzzles_view=detail'>link</a>
-i wpisz rozwiązanie w pole, aby przejść dalej :).
-</p>
-<p>
-  Jeśli potrzebujesz, tu są <a target="_blank" href='https://www.griddlers.net/pl/pages/g_rules'>zasady</a>
-</p>
-  
+  <div id="tresc">
+    
+  </div>
   <p>
     
     https://www.jigsawplanet.com/?rc=play&pid=231c904b7c79
@@ -81,6 +78,7 @@ i wpisz rozwiązanie w pole, aby przejść dalej :).
   var nie_btn = document.querySelector('#nie_btn');
   var zagadki_div = document.querySelector('#zagadki');
   var buttony = document.querySelector('#buttony');
+  var send_btn = document.querySelector('#send_btn');
   
   tak_btn_wrapper.addEventListener('mouseover', function() {
       // mouse is hovering over this element
@@ -99,6 +97,19 @@ i wpisz rozwiązanie w pole, aby przejść dalej :).
     zagadki.style.display = 'block';
     //buttony.style.transition = 'opacity 1000ms';
     buttony.style.opacity = '0';
+  });
+  
+  var tresc = document.querySelector('#tresc');
+  
+  send_btn.addEventListener('click', function() {
+    tresc.innerHTML = `<p>
+    Rozwiąż zagadkę z poniższego linku:
+    <a target="_blank" href='https://www.griddlers.net/pl_PL/nonogram/-/g/i01?p_p_lifecycle=2&p_p_resource_id=griddlerHtml&p_p_cacheability=cacheLevelPage&_gpuzzles_WAR_puzzles_touchMode=false&_gpuzzles_WAR_puzzles_id=146672&_gpuzzles_WAR_puzzles_id=146672&_gpuzzles_WAR_puzzles_view=detail'>link</a>
+    i wpisz rozwiązanie w pole, aby przejść dalej :).
+    </p>
+    <p>
+      Jeśli potrzebujesz, tu są <a target="_blank" href='https://www.griddlers.net/pl/pages/g_rules'>zasady</a>
+    </p>`;
   });
   
 </script>
