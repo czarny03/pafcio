@@ -136,7 +136,7 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
   }
   
   function showBalls() {
-    var balls = getCookie('balls');
+    var balls = getCookie('pafcio_balls');
     var ballsArray = balls.split(',');
     for (var i = 0; i < ballsArray.length; i++) {
       var ball = document.querySelector('#ball' + ballsArray[i]);
@@ -186,7 +186,7 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
   send_btn.addEventListener('click', function() {
     if (input.value.toLowerCase() == 'mąci') {
       
-      document.cookie = "balls=5";
+      document.cookie = "pafcio_balls=5";
       showBalls();
       
       tresc.innerHTML = `<p>
