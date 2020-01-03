@@ -297,9 +297,9 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
       </p>`;
     }
     else {
-      var rand = Math.round(Math.random() * 100) % 12;
+      var rand = Math.round(Math.random() * 100) % 31;
       while (rand == currentRand) 
-         rand = Math.round(Math.random() * 100) % 12;
+         rand = Math.round(Math.random() * 100) % 31;
       currentRand = rand;
       tresc.innerHTML = `<div style="margin-top: 20px;
       display: flex;
