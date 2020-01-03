@@ -172,16 +172,32 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
     }, 1000);
   }
   
+  function showBall(number) {
+    var balls = getCookie('pafcio_balls');
+    if (balls != "") {
+      var ballsArray = balls.split(',');
+      for (var i = 0; i < ballsArray.length; i++) {
+        var ball = document.querySelector('#ball' + ballsArray[i]);
+        if (ball && ballsArray[i] == number) {
+          ball.classList.add('verticalTranslate');
+          setTimeout(returnBall.bind(null, ball, ballsArray[i]), 500);
+          setTimeout(transitionBall.bind(null, ball), 1000);
+        }
+      }
+    }
+  }
+  
   function showBalls() {
     var balls = getCookie('pafcio_balls');
     if (balls != "") {
       var ballsArray = balls.split(',');
       for (var i = 0; i < ballsArray.length; i++) {
         var ball = document.querySelector('#ball' + ballsArray[i]);
-        if (ball)
+        if (ball) {
           ball.classList.add('verticalTranslate');
           setTimeout(returnBall.bind(null, ball, ballsArray[i]), 500);
           setTimeout(transitionBall.bind(null, ball), 1000);
+        }
       }
     }
   }
@@ -238,7 +254,7 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
   send_btn.addEventListener('click', function() {
     if (input.value.toLowerCase() == 'mąci') {
       addBallCookie(5);
-      showBalls();
+      showBall(5);
       
       tresc.innerHTML = `<p>
       Gratulacje! Odnalazłeś 5-gwiazdkową smoczą kulę!
@@ -249,7 +265,7 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
     }
     else if (checkCookie(5) && input.value.toLowerCase() == 'trzy') {
       addBallCookie(3);
-      showBalls();
+      showBall(3);
       
       tresc.innerHTML = `<p>
       Gratulacje! Odnalazłeś 3-gwiazdkową smoczą kulę!
@@ -262,7 +278,7 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
     }
     else if (checkCookie(3) && input.value.toLowerCase() == '23') {
       addBallCookie(7);
-      showBalls();
+      showBall(7);
       
       tresc.innerHTML = `<p>
       Gratulacje! Odnalazłeś 7-gwiazdkową smoczą kulę!
