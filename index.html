@@ -28,13 +28,13 @@ layout: default
   transition: opacity 2000ms linear;
   -webkit-transition: opacity 2000ms linear;">
   
-  <img src="Ball 1 Star.png" height="50" width="50" />
-  <img src="circle.png" height="50" width="50" />
-  <img src="circle.png" height="50" width="50" />
-  <img src="circle.png" height="50" width="50" />
-  <img src="circle.png" height="50" width="50" />
-  <img src="circle.png" height="50" width="50" />
-  <img src="circle.png" height="50" width="50" />
+  <img id="ball1" src="circle.png" height="50" width="50" />
+  <img id="ball2" src="circle.png" height="50" width="50" />
+  <img id="ball3" src="circle.png" height="50" width="50" />
+  <img id="ball4" src="circle.png" height="50" width="50" />
+  <img id="ball5" src="circle.png" height="50" width="50" />
+  <img id="ball6" src="circle.png" height="50" width="50" />
+  <img id="ball7" src="circle.png" height="50" width="50" />
   
 </div>
   
@@ -113,7 +113,7 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
+    for (var i = 0; i <ca.length; i++) {
       var c = ca[i];
       while (c.charAt(0) == ' ') {
         c = c.substring(1);
@@ -126,7 +126,12 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
   }
   
   function showBalls() {
-    var cookie = getCookie('balls');
+    var balls = getCookie('balls');
+    var ballsArray = balls.split(',');
+    for (var i = 0; i < ballsArray.length; i++) {
+      var ball = document.querySelector('#ball' + ballsArray[i]);
+      ball.src = 'Ball ' + ballsArray[i] + ' Stars.png';
+    }
   }
   
   var tak_btn_wrapper = document.querySelector('#tak_btn_wrapper');
