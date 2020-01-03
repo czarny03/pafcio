@@ -101,13 +101,18 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. D
 
 <div id="zagadki" style="display:none;">
 <p>
-Ojej... szkoda &#128532; 
+Ojej... szkoda.... &#128532; 
 </p>
 <p>
 Oczywiście, że nie chcesz, bo nie przeszedłeś jeszcze MOJEJ PRÓBY AHAHAHAHHAHAHAHAHAHAAAHAHAHH!!! &#128520; &#128520; &#128520;
 </p>
 <p>
-Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu poniżej:
+Zdałeś test cierpliwości, teraz czeka Cię test sprytu. Prawdziwy wojownik musi być bowiem sprytny!
+Twoim zadaniem jest odnaleźć 7 smoczych kul, które, jak wiadomo, rozsiane są po całym świecie.
+Kiedy już je uzbierasz będziesz mógł przyzwać Shenlonga, który spełni Twoje jedno życzenie (pod warunkiem, że tym życzeniem będzie otrzymanie prezentu &#128517;).
+</p>
+<p>
+Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz kolejne hasła, również wpisuj je w tym polu.
 </p>
 
 <div style="display: flex;
@@ -120,11 +125,7 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
   <div id="tresc">
     
   </div>
-  <p>
-    
-    https://www.jigsawplanet.com/?rc=play&pid=231c904b7c79
-    
-  </p>
+  
 </div>
 
 <script>
@@ -142,6 +143,18 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
       }
     }
     return "";
+  }
+  
+  function checkCookie(number) {
+    var balls = getCookie('pafcio_balls');
+    if (balls != "") {
+      var ballsArray = balls.split(',');
+      for (var i = 0; i < ballsArray.length; i++) {
+        if (ballsArray[i] == number)
+          return true;
+      }
+    }
+    return false;
   }
   
   function returnBall(ball, k) {
@@ -214,6 +227,33 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
       showBalls();
       
       tresc.innerHTML = `<p>
+      Gratulacje! Odnalazłeś 5-gwiazdkową smoczą kulę!
+      </p>
+      <p>
+      Hmmm... powinieneś wiedzieć gdzie jest kolejna... Zaraz, czy nie mówiłem Ci już wcześniej gdzie szukać??
+      </p>`;
+    }
+    else if (checkCookie(5) && input.value.toLowerCase() == 'trzy') {
+      document.cookie = "pafcio_balls=3";
+      showBalls();
+      
+      tresc.innerHTML = `<p>
+      Gratulacje! Odnalazłeś 3-gwiazdkową smoczą kulę!
+      </p>
+      <p>Twoje następne wyzwanie kryje się pod tym 
+      <a target="_blank" href='https://www.jigsawplanet.com/?rc=play&pid=231c904b7c79'>linkiem</a>.
+        Postaraj się rozwiązać ją jak najszybciej i teleportuj swojemu mistrzowi (czyli wyślij mi na fb) screen z rozwiązaniem.
+        Screen musi uwzględniać Twój czas - sprawdzimy czy byłeś szybszy od swojego mistrza! &#129299;
+      </p>`;
+    }
+    else if (checkCookie(3) && input.value.toLowerCase() == '23') {
+      document.cookie = "pafcio_balls=7";
+      showBalls();
+      
+      tresc.innerHTML = `<p>
+      Gratulacje! Odnalazłeś 7-gwiazdkową smoczą kulę!
+      </p>
+      <p>
       Rozwiąż zagadkę z poniższego linku:
       <a target="_blank" href='https://www.griddlers.net/pl_PL/nonogram/-/g/i01?p_p_lifecycle=2&p_p_resource_id=griddlerHtml&p_p_cacheability=cacheLevelPage&_gpuzzles_WAR_puzzles_touchMode=false&_gpuzzles_WAR_puzzles_id=146672&_gpuzzles_WAR_puzzles_id=146672&_gpuzzles_WAR_puzzles_view=detail'>link</a>
       i wpisz rozwiązanie w pole, aby przejść dalej :).
@@ -222,9 +262,6 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
         Jeśli potrzebujesz, tu są <a target="_blank" href='https://www.griddlers.net/pl/pages/g_rules'>zasady</a>
       </p>`;
     }
-    //else if () {
-    //  document.cookie = "username=John Doe";
-    //}
   });
   
 </script>
