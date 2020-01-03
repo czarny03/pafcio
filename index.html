@@ -126,7 +126,7 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
     return "";
   }
   
-  (function showBalls() {
+  function showBalls() {
     var balls = getCookie('balls');
     if (!balls)
       document.cookie = "balls=,";
@@ -134,6 +134,14 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
     for (var i = 0; i < ballsArray.length; i++) {
       var ball = document.querySelector('#ball' + ballsArray[i]);
       ball.src = 'Ball ' + ballsArray[i] + ' Stars.png';
+    }
+  }
+  
+  (function ready() {
+    if (document.readyState !== 'loading') {
+      showBalls();
+    } else {
+      document.addEventListener('DOMContentLoaded', showBalls);
     }
   })();
   
