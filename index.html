@@ -8,35 +8,12 @@ layout: default
     box-shadow: none;
     border: none;
   }
+  
+  .transform {                                 
+    transition: opacity 2000ms linear;
+    -webkit-transition: opacity 2000ms linear;
+  }
 </style>
-
-<div id="balls" style="width: 100%; height:80px;
-  /* We first create a flex layout context */
-  display: flex;
-  
-  /* Then we define the flow direction 
-     and if we allow the items to wrap 
-   * Remember this is the same as:
-   * flex-direction: row;
-   * flex-wrap: wrap;
-   */
-  flex-flow: row wrap;
-  
-  /* Then we define how is distributed the remaining space */
-  justify-content: space-around;
-                                   
-  transition: opacity 2000ms linear;
-  -webkit-transition: opacity 2000ms linear;">
-  
-  <img id="ball1" src="circle.png" height="50" width="50" />
-  <img id="ball2" src="circle.png" height="50" width="50" />
-  <img id="ball3" src="circle.png" height="50" width="50" />
-  <img id="ball4" src="circle.png" height="50" width="50" />
-  <img id="ball5" src="circle.png" height="50" width="50" />
-  <img id="ball6" src="circle.png" height="50" width="50" />
-  <img id="ball7" src="circle.png" height="50" width="50" />
-  
-</div>
   
 <p>
 Cieszę się, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. Dalej powinno być już tylko z górki.
@@ -46,7 +23,7 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. D
 A więc czy chciałbyś już dostać swój prezent?
 </p>
 
-<div id="buttony" style="width: 100%; height:80px;
+<div id="buttony" class="transform" style="width: 100%; height:80px;
   /* We first create a flex layout context */
   display: flex;
   
@@ -59,10 +36,7 @@ A więc czy chciałbyś już dostać swój prezent?
   flex-flow: row wrap;
   
   /* Then we define how is distributed the remaining space */
-  justify-content: space-around;
-                                   
-  transition: opacity 2000ms linear;
-  -webkit-transition: opacity 2000ms linear;">
+  justify-content: space-around;">
   
   <div id="tak_btn_wrapper" style="width: 50%; height: 100%;
   display: flex;
@@ -80,12 +54,37 @@ A więc czy chciałbyś już dostać swój prezent?
   
 </div>
 
+<div id="balls" class="transform" style="width: 100%; height:80px; opacity: 0;
+  /* We first create a flex layout context */
+  display: none;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;">
+  
+  <img id="ball1" src="circle.png" height="50" width="50" />
+  <img id="ball2" src="circle.png" height="50" width="50" />
+  <img id="ball3" src="circle.png" height="50" width="50" />
+  <img id="ball4" src="circle.png" height="50" width="50" />
+  <img id="ball5" src="circle.png" height="50" width="50" />
+  <img id="ball6" src="circle.png" height="50" width="50" />
+  <img id="ball7" src="circle.png" height="50" width="50" />
+  
+</div>
+
 <div id="zagadki" style="display:none;">
 <p>
 Ojej... szkoda &#128532; 
 </p>
 <p>
-Oczywiście, że nie chcesz, bo nie przeszedłeś jeszcze MOJEJ PRÓBY AHAHAHAHHAHAHAHAHAH!!! &#128520; &#128520; &#128520;
+Oczywiście, że nie chcesz, bo nie przeszedłeś jeszcze MOJEJ PRÓBY AHAHAHAHHAHAHAHAHAHAAAHAHAHH!!! &#128520; &#128520; &#128520;
 </p>
 <p>
 Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu poniżej:
@@ -139,6 +138,7 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
   var nie_btn = document.querySelector('#nie_btn');
   var zagadki_div = document.querySelector('#zagadki');
   var buttony = document.querySelector('#buttony');
+  var balls = document.querySelector('#balls');
   var send_btn = document.querySelector('#send_btn');
   
   tak_btn_wrapper.addEventListener('mouseover', function() {
@@ -155,9 +155,14 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
   });
   
   nie_btn.addEventListener('click', function() {
-    zagadki.style.display = 'block';
+    zagadki_div.style.display = 'block';
     //buttony.style.transition = 'opacity 1000ms';
     buttony.style.opacity = '0';
+    setTimeout(function() {
+      buttony.style.display = 'none';
+      balls.style.display = 'flex';
+      buttony.style.opacity = '1';
+    }, 2000);
   });
   
   var tresc = document.querySelector('#tresc');
