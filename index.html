@@ -142,7 +142,7 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
       var ball = document.querySelector('#ball' + ballsArray[i]);
       if (ball)
         ball.style.top = '-1000px';
-        setTimeout(returnBall.bind(ball, ballsArray[i]), 3000);
+        setTimeout(returnBall.bind(null, ball, ballsArray[i]), 3000);
     }
   }
   
