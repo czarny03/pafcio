@@ -131,12 +131,11 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
   
   function showBalls() {
     var balls = getCookie('balls');
-    if (!balls)
-      document.cookie = "balls=";
     var ballsArray = balls.split(',');
     for (var i = 0; i < ballsArray.length; i++) {
       var ball = document.querySelector('#ball' + ballsArray[i]);
-      ball.src = 'Ball ' + ballsArray[i] + ' Stars.png';
+      if (ball)
+        ball.src = 'Ball ' + ballsArray[i] + ' Stars.png';
     }
   }
   
