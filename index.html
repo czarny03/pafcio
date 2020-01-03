@@ -173,15 +173,17 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
   }
   
   function showBall(number) {
-    var balls = getCookie('pafcio_balls');
-    if (balls != "") {
-      var ballsArray = balls.split(',');
-      for (var i = 0; i < ballsArray.length; i++) {
-        var ball = document.querySelector('#ball' + ballsArray[i]);
-        if (ball && ballsArray[i] == number) {
-          ball.classList.add('verticalTranslate');
-          setTimeout(returnBall.bind(null, ball, ballsArray[i]), 500);
-          setTimeout(transitionBall.bind(null, ball), 1000);
+    if (number >= 1 && number <= 7) {
+      var balls = getCookie('pafcio_balls');
+      if (balls != "") {
+        var ballsArray = balls.split(',');
+        for (var i = 0; i < ballsArray.length; i++) {
+          var ball = document.querySelector('#ball' + ballsArray[i]);
+          if (ball && ballsArray[i] == number) {
+            ball.classList.add('verticalTranslate');
+            setTimeout(returnBall.bind(null, ball, ballsArray[i]), 500);
+            setTimeout(transitionBall.bind(null, ball), 1000);
+          }
         }
       }
     }
@@ -192,11 +194,13 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
     if (balls != "") {
       var ballsArray = balls.split(',');
       for (var i = 0; i < ballsArray.length; i++) {
-        var ball = document.querySelector('#ball' + ballsArray[i]);
-        if (ball) {
-          ball.classList.add('verticalTranslate');
-          setTimeout(returnBall.bind(null, ball, ballsArray[i]), 500);
-          setTimeout(transitionBall.bind(null, ball), 1000);
+        if (ballsArray[i] >= 1 && ballsArray[i] <= 7) {
+          var ball = document.querySelector('#ball' + ballsArray[i]);
+          if (ball) {
+            ball.classList.add('verticalTranslate');
+            setTimeout(returnBall.bind(null, ball, ballsArray[i]), 500);
+            setTimeout(transitionBall.bind(null, ball), 1000);
+          }
         }
       }
     }
@@ -308,7 +312,33 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
       </p>
       <p>
         Aby odnaleźć następną smoczą kulę musisz pokonać... Kikimorę!!! Kikimora to straszny potwór, ale da się go ujarzmić.
+
+TODO
+
+
       </p>`;
+    }
+    else if (checkCookie(1) && input.value.toLowerCase() == 'nppkpdcpbm') {
+      addBallCookie(0);
+      
+      tresc.innerHTML = `<p style="font-weight: bold;">
+      Hmm... coś jest nie tak... to chyba nie to hasło! &#128552; Spróbujmy inaczej...
+      </p>
+      <p>
+        TODO
+      </p>`;
+    }
+    else if (checkCookie(0) && input.value.toLowerCase() == 'narzeczona') {
+      addBallCookie(2);
+      showBall(2);
+      
+      TODO wykreślanka
+    }
+    else if (checkCookie(2) && input.value.toUpperCase() == 'WMYNMDTVMQXBTXDWWLGLYYGRBJZSYP') {
+      addBallCookie(7);
+      showBall(7);
+      
+      TODO ostateczne starcie
     }
     else {
       var rand = Math.round(Math.random() * 100) % 31;
