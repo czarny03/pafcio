@@ -126,14 +126,16 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
     return "";
   }
   
-  function showBalls() {
+  (function showBalls() {
     var balls = getCookie('balls');
+    if (!balls)
+      document.cookie = "balls=,";
     var ballsArray = balls.split(',');
     for (var i = 0; i < ballsArray.length; i++) {
       var ball = document.querySelector('#ball' + ballsArray[i]);
       ball.src = 'Ball ' + ballsArray[i] + ' Stars.png';
     }
-  }
+  })();
   
   var tak_btn_wrapper = document.querySelector('#tak_btn_wrapper');
   var tak_btn = document.querySelector('#tak_btn');
