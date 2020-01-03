@@ -23,7 +23,7 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. D
 A więc czy chciałbyś już dostać swój prezent?
 </p>
 
-<div id="buttony" class="transform" style="width: 100%; height:80px;
+<div id="buttony" class="transform" style="width: 100%; height:80px; position: absolute;
   /* We first create a flex layout context */
   display: flex;
   
@@ -54,9 +54,9 @@ A więc czy chciałbyś już dostać swój prezent?
   
 </div>
 
-<div id="balls" class="transform" style="width: 100%; height:80px; opacity: 0;
+<div id="balls" class="transform" style="width: 100%; height:80px; opacity: 0; position: absolute;
   /* We first create a flex layout context */
-  display: none;
+  display: flex;
   
   /* Then we define the flow direction 
      and if we allow the items to wrap 
@@ -158,11 +158,7 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
     zagadki_div.style.display = 'block';
     //buttony.style.transition = 'opacity 1000ms';
     buttony.style.opacity = '0';
-    setTimeout(function() {
-      buttony.style.display = 'none';
-      balls.style.display = 'flex';
-      balls.style.opacity = '1';
-    }, 3000);
+    balls.style.opacity = '1';
   });
   
   var tresc = document.querySelector('#tresc');
