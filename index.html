@@ -132,12 +132,18 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
   function showBalls() {
     var balls = getCookie('balls');
     if (!balls)
-      document.cookie = "balls=,";
+      document.cookie = "balls=";
     var ballsArray = balls.split(',');
     for (var i = 0; i < ballsArray.length; i++) {
       var ball = document.querySelector('#ball' + ballsArray[i]);
       ball.src = 'Ball ' + ballsArray[i] + ' Stars.png';
     }
+  }
+  
+  if (document.readyState !== 'loading') {
+    showBalls();
+  } else {
+    document.addEventListener('DOMContentLoaded', showBalls);
   }
   
   var tak_btn_wrapper = document.querySelector('#tak_btn_wrapper');
@@ -162,7 +168,6 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
   });
   
   nie_btn.addEventListener('click', function() {
-    showBalls();
     zagadki_div.style.display = 'block';
     //buttony.style.transition = 'opacity 1000ms';
     buttony.style.opacity = '0';
