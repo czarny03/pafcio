@@ -10,14 +10,34 @@ layout: default
   }
 </style>
 
-<img src="Ball 1 Star.png" height="50" width="50" />
-<img src="circle.png" height="50" width="50" />
-<img src="circle.png" height="50" width="50" />
-<img src="circle.png" height="50" width="50" />
-<img src="circle.png" height="50" width="50" />
-<img src="circle.png" height="50" width="50" />
-<img src="circle.png" height="50" width="50" />
-
+<div id="balls" style="width: 100%; height:80px;
+  /* We first create a flex layout context */
+  display: flex;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+                                   
+  transition: opacity 2000ms linear;
+  -webkit-transition: opacity 2000ms linear;">
+  
+  <img src="Ball 1 Star.png" height="50" width="50" />
+  <img src="circle.png" height="50" width="50" />
+  <img src="circle.png" height="50" width="50" />
+  <img src="circle.png" height="50" width="50" />
+  <img src="circle.png" height="50" width="50" />
+  <img src="circle.png" height="50" width="50" />
+  <img src="circle.png" height="50" width="50" />
+  
+</div>
+  
 <p>
 Cieszę się, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. Dalej powinno być już tylko z górki.
 </p>
