@@ -100,12 +100,12 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. D
 </div>
 
 <div id="zagadki" style="display:none;">
-<h3>
+<p>
 Ojej... szkoda.... &#128532; 
-</h3>
-<h2>
+</p>
+<h1>
 Oczywiście, że nie chcesz, bo nie przeszedłeś jeszcze MOJEJ PRÓBY AHAHAHAHHAHAHAHAHAHAAAHAHAHH!!! &#128520; &#128520; &#128520;
-</h2>
+</h1>
 <p>
 Zdałeś test cierpliwości, teraz czeka Cię test sprytu. Prawdziwy wojownik bowiem musi być sprytny!
 Jesteś prawdziwym wojownikiem czy jakąś pipką?... No właśnie.
@@ -296,7 +296,12 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
       </p>`;
     }
     else {
-      tresc.innerHTML = `<img src='wrong.gif' height='150px'/>`;
+      tresc.innerHTML = `<div style="height: 170px;
+      display: flex;
+      justify-content: center;           
+      align-items: center;">
+        <img src='wrong.gif' height='150px'/>
+      </div>`;
     }
   });
   
