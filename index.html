@@ -353,13 +353,50 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
       addBallCookie(2);
       showBall(2);
       
-      //TODO wykreślanka
+      tresc.innerHTML = `<p style="font-weight: bold;">
+      Gratulacje! Odnalazłeś 2-gwiazdkową smoczą kulę!
+      </p>
+      <p>
+        Brawo! Pokonałeś długą drogę, żeby tu dotrzeć... Pora na przedostatnie wyzwanie!
+      </p>
+      <p>
+        Rozwiąż wykreślankę. Hasło stanowią litery, które pozostaną czytane kolejnymi rzędami, od lewej do prawej.
+      </p>
+      <p>
+        W razie kłopotów pomocny może być ten <a target="_blank" href='https://dragonball.fandom.com/wiki/Main_Page'>link</a>.
+      </p>
+      <img src='dbz_wordsearch_raw.png' height='600px;'/>`
     }
     else if (checkCookie(2) && input.value.toUpperCase() == 'WMYNMDTVMQXBTXDWWLGLYYGRBJZSYP') {
       addBallCookie(7);
       showBall(7);
       
-      //TODO ostateczne starcie
+      tresc.innerHTML = `<p style="font-weight: bold;">
+      Gratulacje! Odnalazłeś 7-gwiazdkową smoczą kulę!
+      </p>
+      <p>
+        No proszę... Udało Ci się dotrzeć aż tutaj... Kto by pomyślał?
+      </p>
+      <p style="font-size=30px; font-weight: bold;">
+       NA PEWNO NIE JA HAHAHAHAHHAHA!!! &#128520; &#128520; &#128520;
+      </p>
+      <p>
+       Brakuje Ci już tylko jednej kuli... czterogwiazdkowej. Była ona w posiadaniu Goku, pamiętasz? Gdzie ona może być teraz?
+       Może być tylko u kogoś kto był w stanie pokonać samego Son Goku...
+      </p>
+      <p>
+       Tak, taak.. Dobrze się domyślasz.
+      </p>
+      <p style="font-size=30px; font-weight: bold;">
+       MUSISZ POKONAĆ MNIE W WALCE!!! HAHAHHAHAHAHAHAHAAAHAHAHH &#128547;
+      </p>
+      <p>
+        Będzie to ostatnio sprawdzian... Sprawdzian siły!
+        Już niebawem spotkamy się na arenie i jeśli dowiedziesz swojej mocy (choć według mojego radaru jest to marne kilkanaście jednostek), otrzymasz to, czego tak bardzo pragniesz.
+      </p>
+      <p>
+        Pamiętasz jeszcze starą wskazówkę? "Musisz więcej trenować!" Mam nadzieję, że wziąłeś sobie te słowa do serca... Nie rozczaruj mnie &#128542; Do zobaczenia dziku!! &#128548;
+      </p>`
     }
     else if (checkCookie(7) && input.value.toLowerCase() == 'jestem zwycięzcą') {
       addBallCookie(4);
