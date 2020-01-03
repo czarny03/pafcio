@@ -73,13 +73,13 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. D
     justify-content: space-around;            
     align-items: center;">
 
-    <img id="ball1" src="circle.png" height="50" width="50" />
-    <img id="ball2" src="circle.png" height="50" width="50" />
-    <img id="ball3" src="circle.png" height="50" width="50" />
-    <img id="ball4" src="circle.png" height="50" width="50" />
-    <img id="ball5" src="circle.png" height="50" width="50" />
-    <img id="ball6" src="circle.png" height="50" width="50" />
-    <img id="ball7" src="circle.png" height="50" width="50" />
+    <img id="ball1" src="circle.png" height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
+    <img id="ball2" src="circle.png" height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); />
+    <img id="ball3" src="circle.png" height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); />
+    <img id="ball4" src="circle.png" height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); />
+    <img id="ball5" src="circle.png" height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); />
+    <img id="ball6" src="circle.png" height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); />
+    <img id="ball7" src="circle.png" height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); />
 
   </div>
   
@@ -136,7 +136,11 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
     for (var i = 0; i < ballsArray.length; i++) {
       var ball = document.querySelector('#ball' + ballsArray[i]);
       if (ball)
-        ball.src = 'Ball ' + ballsArray[i] + ' Stars.png';
+        ball.style.top = '-1000px';
+        SetTimeout(function() {
+          ball.src = 'Ball ' + ballsArray[i] + ' Stars.png';
+          ball.style.top = 0;
+        }, 3000);
     }
   }
   
