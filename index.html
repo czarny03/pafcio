@@ -87,13 +87,13 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do miejsca kolejnej próby. D
     justify-content: space-around;            
     align-items: center;">
 
-    <img id="ball1" src="circle.png" position: relative; height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
-    <img id="ball2" src="circle.png" position: relative; height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
-    <img id="ball3" src="circle.png" position: relative; height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
-    <img id="ball4" src="circle.png" position: relative; height="50" width="50" style="transition: 3000ms ease-in-out;" />
+    <img id="ball1" src="circle.png" position: relative; height="50" width="50" />
+    <img id="ball2" src="circle.png" position: relative; height="50" width="50" />
+    <img id="ball3" src="circle.png" position: relative; height="50" width="50" />
+    <img id="ball4" src="circle.png" position: relative; height="50" width="50" />
     <img id="ball5" src="circle.png" position: relative; height="50" width="50" />
-    <img id="ball6" src="circle.png" position: relative; height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
-    <img id="ball7" src="circle.png" position: relative; height="50" width="50" style="transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
+    <img id="ball6" src="circle.png" position: relative; height="50" width="50" />
+    <img id="ball7" src="circle.png" position: relative; height="50" width="50" />
 
   </div>
   
@@ -107,7 +107,10 @@ Ojej... szkoda.... &#128532;
 Oczywiście, że nie chcesz, bo nie przeszedłeś jeszcze MOJEJ PRÓBY AHAHAHAHHAHAHAHAHAHAAAHAHAHH!!! &#128520; &#128520; &#128520;
 </p>
 <p>
-Zdałeś test cierpliwości, teraz czeka Cię test sprytu. Prawdziwy wojownik musi być bowiem sprytny!
+Zdałeś test cierpliwości, teraz czeka Cię test sprytu. Prawdziwy wojownik bowiem musi być sprytny!
+Jesteś prawdziwym wojownikiem czy jakąś pipką?... No właśnie.
+</p>
+<p>
 Twoim zadaniem jest odnaleźć 7 smoczych kul, które, jak wiadomo, rozsiane są po całym świecie.
 Kiedy już je uzbierasz będziesz mógł przyzwać Shenlonga, który spełni Twoje jedno życzenie (pod warunkiem, że tym życzeniem będzie otrzymanie prezentu &#128517;).
 </p>
@@ -220,10 +223,21 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
   var tresc = document.querySelector('#tresc');
   var input = document.querySelector('#input');
   
+  function addBallCookie(number) {
+      var balls = getCookie('pafcio_balls');
+      if (balls != "") {
+        var found = checkCookie(number);
+        if (!found)
+        document.cookie = balls + ',' + number;
+      }
+      else {
+        document.cookie = "pafcio_balls=" + number;
+      }
+  }
+  
   send_btn.addEventListener('click', function() {
     if (input.value.toLowerCase() == 'mąci') {
-      
-      document.cookie = "pafcio_balls=5";
+      addBallCookie(5);
       showBalls();
       
       tresc.innerHTML = `<p>
@@ -234,7 +248,7 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
       </p>`;
     }
     else if (checkCookie(5) && input.value.toLowerCase() == 'trzy') {
-      document.cookie = "pafcio_balls=3";
+      addBallCookie(3);
       showBalls();
       
       tresc.innerHTML = `<p>
@@ -247,7 +261,7 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
       </p>`;
     }
     else if (checkCookie(3) && input.value.toLowerCase() == '23') {
-      document.cookie = "pafcio_balls=7";
+      addBallCookie(7);
       showBalls();
       
       tresc.innerHTML = `<p>
