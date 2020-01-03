@@ -215,6 +215,7 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
   var buttony = document.querySelector('#buttony');
   var balls = document.querySelector('#balls');
   var send_btn = document.querySelector('#send_btn');
+  var currentRand = -1;
   
   tak_btn_wrapper.addEventListener('mouseover', function() {
       // mouse is hovering over this element
@@ -296,11 +297,15 @@ Pierwsze hasło powinieneś już znać - wpisz je w polu poniżej. Gdy poznasz k
       </p>`;
     }
     else {
+      var rand = Math.round(Math.random() * 100) % 12;
+      while (rand == currentRand) 
+         rand = Math.round(Math.random() * 100) % 12;
+      currentRand = rand;
       tresc.innerHTML = `<div style="height: 170px;
       display: flex;
       justify-content: center;           
       align-items: center;">
-        <img src='wrong.gif' height='150px'/>
+        <img src='wrong' + currentRand + '.gif' height='150px'/>
       </div>`;
     }
   });
