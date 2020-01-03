@@ -137,12 +137,14 @@ Jeśli chcesz przybliżyć się do rozwiązania możesz wpisać hasło w polu po
   
   function showBalls() {
     var balls = getCookie('pafcio_balls');
-    var ballsArray = balls.split(',');
-    for (var i = 0; i < ballsArray.length; i++) {
-      var ball = document.querySelector('#ball' + ballsArray[i]);
-      if (ball)
-        ball.style.top = '-1000px';
-        setTimeout(returnBall.bind(null, ball, ballsArray[i]), 3000);
+    if (balls != "") {
+      var ballsArray = balls.split(',');
+      for (var i = 0; i < ballsArray.length; i++) {
+        var ball = document.querySelector('#ball' + ballsArray[i]);
+        if (ball)
+          ball.style.top = '-1000px';
+          setTimeout(returnBall.bind(null, ball, ballsArray[i]), 3000);
+      }
     }
   }
   
