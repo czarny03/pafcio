@@ -13,19 +13,12 @@ layout: default
     transition: opacity 2000ms linear;
     -webkit-transition: opacity 2000ms linear;
   }
-
-  .verticalTranslateZagadki {  
-    transition: 1000ms ease-in-out;
-    -webkit-transition: 1000ms ease-in-out;
-    transform: translate(0,-120px);
-    -webkit-transform: translate(0,-120px);
-  }
   
   .verticalTranslate {  
     transition: 1000ms ease-in-out;
     -webkit-transition: 1000ms ease-in-out;
-    transform: translate(0,-200px);
-    -webkit-transform: translate(0,-200px);
+    transform: translate(0,-120px);
+    -webkit-transform: translate(0,-120px);
   }
   
   .verticalTranslateBack {  
@@ -40,7 +33,7 @@ layout: default
 Cieszę się, że wreszcie udało Ci się dotrzeć do tego miejsca. Dalej powinno być już tylko z górki.
 </p>
 
-<div style="width: 100%; height:120px; position: relative">
+<div id="calosc" style="width: 100%; height:120px;">
 
   <div id="buttony" class="transform" style="width: 100%; height:100%; position: relative; top: 0;">
     <p>
@@ -78,70 +71,70 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do tego miejsca. Dalej powinn
 
   </div>
   
-</div>
+
+  <div id="zagadki_div" class="transform" style="display:none; opacity: 0">
+    <p>
+    Ojej... szkoda... naprawdę myślisz, że jesteś jeszcze za słaby?.... &#128532; 
+    </p>
+    <p style="font-size=30px; font-weight: bold;">
+     Oczywiście, że jesteś, bo nie przeszedłeś jeszcze MOJEJ PRÓBY AHAHAHAHHAHAHAHAHAHAAAHAHAHH!!! &#128520; &#128520; &#128520;
+    </p>
+    <p>
+    Zdałeś sprawdzian cierpliwości, teraz czeka Cię test sprytu. Prawdziwy wojownik bowiem musi być sprytny!
+    Jesteś prawdziwym wojownikiem czy jakąś pipką?... No właśnie.
+    </p>
+    <p>
+    Twoim zadaniem jest odnaleźć 7 smoczych kul, które, jak wiadomo, rozsiane są po całym świecie.
+    Kiedy już je uzbierasz będziesz mógł przyzwać Shenrona i wtedy kto wie, dlaczego by nie, może spełni się Twoje jedno życzenie? &#129321;
+    </p>
 
 
-<div id="zagadki_div" class="transform" style="display:none; position: relative; top: 120px;">
-<p>
-Ojej... szkoda... naprawdę myślisz, że jesteś jeszcze za słaby?.... &#128532; 
-</p>
-<p style="font-size=30px; font-weight: bold;">
- Oczywiście, że jesteś, bo nie przeszedłeś jeszcze MOJEJ PRÓBY AHAHAHAHHAHAHAHAHAHAAAHAHAHH!!! &#128520; &#128520; &#128520;
-</p>
-<p>
-Zdałeś sprawdzian cierpliwości, teraz czeka Cię test sprytu. Prawdziwy wojownik bowiem musi być sprytny!
-Jesteś prawdziwym wojownikiem czy jakąś pipką?... No właśnie.
-</p>
-<p>
-Twoim zadaniem jest odnaleźć 7 smoczych kul, które, jak wiadomo, rozsiane są po całym świecie.
-Kiedy już je uzbierasz będziesz mógł przyzwać Shenrona i wtedy kto wie, dlaczego by nie, może spełni się Twoje jedno życzenie? &#129321;
-</p>
-  
+    <div id="balls" class="transform" style="width: 100%;
+      /* We first create a flex layout context */
+      display: flex;
 
-  <div id="balls" class="transform" style="width: 100%; opacity: 0;
-    /* We first create a flex layout context */
-    display: flex;
+      /* Then we define the flow direction 
+         and if we allow the items to wrap 
+       * Remember this is the same as:
+       * flex-direction: row;
+       * flex-wrap: wrap;
+       */
+      flex-flow: row wrap;
 
-    /* Then we define the flow direction 
-       and if we allow the items to wrap 
-     * Remember this is the same as:
-     * flex-direction: row;
-     * flex-wrap: wrap;
-     */
-    flex-flow: row wrap;
+      /* Then we define how is distributed the remaining space */
+      justify-content: space-around;            
+      align-items: center;">
 
-    /* Then we define how is distributed the remaining space */
-    justify-content: space-around;            
-    align-items: center;">
-
-    <img id="ball1" src="circle.png" position: relative; height="50" width="50" />
-    <img id="ball2" src="circle.png" position: relative; height="50" width="50" />
-    <img id="ball3" src="circle.png" position: relative; height="50" width="50" />
-    <img id="ball4" src="circle.png" position: relative; height="50" width="50" />
-    <img id="ball5" src="circle.png" position: relative; height="50" width="50" />
-    <img id="ball6" src="circle.png" position: relative; height="50" width="50" />
-    <img id="ball7" src="circle.png" position: relative; height="50" width="50" />
-
-  </div>
-  
-  
-<p>
-Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej. Gdy poznasz kolejne hasła, również wpisuj je w tym polu.
-</p>
-  
-  <div style="display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;">
-    <div>
-      <input id="input" />
-      <button id="send_btn" >Wyślij</button>
-    </div>
-
-    <div id="tresc">
+      <img id="ball1" src="circle.png" position: relative; height="50" width="50" />
+      <img id="ball2" src="circle.png" position: relative; height="50" width="50" />
+      <img id="ball3" src="circle.png" position: relative; height="50" width="50" />
+      <img id="ball4" src="circle.png" position: relative; height="50" width="50" />
+      <img id="ball5" src="circle.png" position: relative; height="50" width="50" />
+      <img id="ball6" src="circle.png" position: relative; height="50" width="50" />
+      <img id="ball7" src="circle.png" position: relative; height="50" width="50" />
 
     </div>
 
+
+    <p>
+    Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej. Gdy poznasz kolejne hasła, również wpisuj je w tym polu.
+    </p>
+
+    <div style="display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;">
+      <div>
+        <input id="input" />
+        <button id="send_btn" >Wyślij</button>
+      </div>
+
+      <div id="tresc">
+
+      </div>
+
+    </div>
   </div>
+                   
 </div>
 
 <script>
