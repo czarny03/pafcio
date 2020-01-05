@@ -50,7 +50,7 @@ Kiedy już je uzbierasz będziesz mógł przyzwać Shenrona i wtedy kto wie, dla
 </p>
   
 
-  <div id="balls" class="transform" style="width: 100%;
+  <div id="balls" class="transform" style="width: 100%; opacity: 0;
     /* We first create a flex layout context */
     display: flex;
 
@@ -244,8 +244,9 @@ Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej
   nie_btn.addEventListener('click', function() {
     zagadki_div.style.display = 'block';
     //buttony.style.transition = 'opacity 1000ms';
-    buttony.style.opacity = '0';
-    //balls.style.opacity = '1';
+    //buttony.style.opacity = '0';
+    buttony.style.display = 'none';
+    balls.style.opacity = '1';
   });
   
   var tresc = document.querySelector('#tresc');
