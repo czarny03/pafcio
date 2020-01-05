@@ -52,6 +52,19 @@ Kiedy już je uzbierasz będziesz mógł przyzwać Shenrona i wtedy kto wie, dla
 Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej. Gdy poznasz kolejne hasła, również wpisuj je w tym polu.
 </p>
   
+  <div style="display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;">
+    <div>
+      <input id="input" />
+      <button id="send_btn" >Wyślij</button>
+    </div>
+
+    <div id="tresc">
+
+    </div>
+
+  </div>
 </div>
 
 
@@ -121,21 +134,6 @@ Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej
   
 </div>
 
-<div id="input_div" style="display:none;">
-  <div style="display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;">
-    <div>
-      <input id="input" />
-      <button id="send_btn" >Wyślij</button>
-    </div>
-
-    <div id="tresc">
-
-    </div>
-
-  </div>
-</div>
 
 <script>
   function getCookie(cname) {
@@ -222,7 +220,6 @@ Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej
   var tak_btn = document.querySelector('#tak_btn');
   var nie_btn = document.querySelector('#nie_btn');
   var zagadki_div = document.querySelector('#zagadki_div');
-  var input_div = document.querySelector('#input_div');
   var buttony = document.querySelector('#buttony');
   var balls = document.querySelector('#balls');
   var send_btn = document.querySelector('#send_btn');
@@ -243,7 +240,6 @@ Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej
   
   nie_btn.addEventListener('click', function() {
     zagadki_div.style.display = 'block';
-    input_div.style.display = 'block';
     //buttony.style.transition = 'opacity 1000ms';
     buttony.style.opacity = '0';
     balls.style.opacity = '1';
