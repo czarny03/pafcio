@@ -81,7 +81,7 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do tego miejsca. Dalej powinn
 </div>
 
 
-<div id="zagadki_div" style="display:none; position: relative; top: 0;">
+<div id="zagadki_div" class="transform" style="display:none; position: relative; top: 0;">
 <p>
 Ojej... szkoda... naprawdę myślisz, że jesteś jeszcze za słaby?.... &#128532; 
 </p>
@@ -230,7 +230,7 @@ Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej
   var nie_btn = document.querySelector('#nie_btn');
   var zagadki_div = document.querySelector('#zagadki_div');
   var buttony = document.querySelector('#buttony');
-  var balls = document.querySelector('#balls');
+  //var balls = document.querySelector('#balls');
   var send_btn = document.querySelector('#send_btn');
   var currentRand = -1;
   
@@ -249,11 +249,12 @@ Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej
   
   nie_btn.addEventListener('click', function() {
     zagadki_div.style.display = 'block';
+    zagadki_div.style.opacity = '1';
+    zagadki_div.classList.add('verticalTranslateZagadki');
     //buttony.style.transition = 'opacity 1000ms';
     buttony.style.opacity = '0';
     buttony.classList.add('verticalTranslate');
-    zagadki_div.classList.add('verticalTranslateZagadki');
-    balls.style.opacity = '1';
+    //balls.style.opacity = '1';
   });
   
   var tresc = document.querySelector('#tresc');
