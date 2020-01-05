@@ -248,6 +248,9 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do tego miejsca. Dalej powinn
     //buttony.style.transition = 'opacity 1000ms';
     buttony.style.opacity = '0';
     //balls.style.opacity = '1';
+    setTimeout(function() {
+      buttony.style.display = 'none';
+    }, 1000);
   });
   
   var tresc = document.querySelector('#tresc');
