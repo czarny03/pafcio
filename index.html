@@ -33,6 +33,47 @@ layout: default
 Cieszę się, że wreszcie udało Ci się dotrzeć do tego miejsca. Dalej powinno być już tylko z górki.
 </p>
 
+<div style="width: 100%; height:120px; position: relative">
+
+  <div id="buttony" class="transform" style="width: 100%; height:100%; position: relative; top: 0;">
+    <p>
+      Czekałeś z utęsknieniem na ten moment!!! A więc czy chciałbyś już dostać swój prezent?
+    </p>
+    <div style="height: 70%;
+      /* We first create a flex layout context */
+      display: flex;
+
+      /* Then we define the flow direction 
+         and if we allow the items to wrap 
+       * Remember this is the same as:
+       * flex-direction: row;
+       * flex-wrap: wrap;
+       */
+      flex-flow: row wrap;
+
+      /* Then we define how is distributed the remaining space */
+      justify-content: space-around;">
+
+      <div id="tak_btn_wrapper" style="width: 50%; height: 100%;
+      display: flex;
+      justify-content: center;           
+      align-items: center;">
+        <button id="tak_btn" style="height: 30px;" type="button">TAK!!!</button>
+      </div>
+
+      <div style="width: 50%; height: 100%;
+      display: flex;
+      justify-content: center;            
+      align-items: center;">
+        <button id="nie_btn" style="height: 30px;" type="button">Jestem jeszcze za słaby...</button>
+      </div>
+    </div>
+
+  </div>
+  
+</div>
+
+
 <div id="zagadki_div" style="display:none;">
 <p>
 Ojej... szkoda... naprawdę myślisz, że jesteś jeszcze za słaby?.... &#128532; 
@@ -95,48 +136,6 @@ Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej
 
   </div>
 </div>
-
-
-<div style="width: 100%; height:120px; position: relative">
-
-  <div id="buttony" class="transform" style="width: 100%; height:100%; position: relative; top: 0; z-index: 2;">
-    <p>
-      Czekałeś z utęsknieniem na ten moment!!! A więc czy chciałbyś już dostać swój prezent?
-    </p>
-    <div style="height: 70%;
-      /* We first create a flex layout context */
-      display: flex;
-
-      /* Then we define the flow direction 
-         and if we allow the items to wrap 
-       * Remember this is the same as:
-       * flex-direction: row;
-       * flex-wrap: wrap;
-       */
-      flex-flow: row wrap;
-
-      /* Then we define how is distributed the remaining space */
-      justify-content: space-around;">
-
-      <div id="tak_btn_wrapper" style="width: 50%; height: 100%;
-      display: flex;
-      justify-content: center;           
-      align-items: center;">
-        <button id="tak_btn" style="height: 30px;" type="button">TAK!!!</button>
-      </div>
-
-      <div style="width: 50%; height: 100%;
-      display: flex;
-      justify-content: center;            
-      align-items: center;">
-        <button id="nie_btn" style="height: 30px;" type="button">Jestem jeszcze za słaby...</button>
-      </div>
-    </div>
-
-  </div>
-  
-</div>
-
 
 <script>
   function getCookie(cname) {
@@ -224,7 +223,7 @@ Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej
   var nie_btn = document.querySelector('#nie_btn');
   var zagadki_div = document.querySelector('#zagadki_div');
   var buttony = document.querySelector('#buttony');
-  //var balls = document.querySelector('#balls');
+  var balls = document.querySelector('#balls');
   var send_btn = document.querySelector('#send_btn');
   var currentRand = -1;
   
@@ -244,8 +243,8 @@ Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej
   nie_btn.addEventListener('click', function() {
     zagadki_div.style.display = 'block';
     //buttony.style.transition = 'opacity 1000ms';
-    //buttony.style.opacity = '0';
-    buttony.style.display = 'none';
+    buttony.style.opacity = '0';
+    buttony.classList.add('verticalTranslate');
     balls.style.opacity = '1';
   });
   
