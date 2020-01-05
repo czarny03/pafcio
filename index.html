@@ -13,6 +13,13 @@ layout: default
     transition: opacity 2000ms linear;
     -webkit-transition: opacity 2000ms linear;
   }
+
+  .verticalTranslateZagadki {  
+    transition: 1000ms ease-in-out;
+    -webkit-transition: 1000ms ease-in-out;
+    transform: translate(0,-120px);
+    -webkit-transform: translate(0,-120px);
+  }
   
   .verticalTranslate {  
     transition: 1000ms ease-in-out;
@@ -245,6 +252,7 @@ Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej
     //buttony.style.transition = 'opacity 1000ms';
     buttony.style.opacity = '0';
     buttony.classList.add('verticalTranslate');
+    zagadki_div.classList.add('verticalTranslateZagadki');
     balls.style.opacity = '1';
   });
   
