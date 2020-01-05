@@ -33,7 +33,7 @@ layout: default
 Cieszę się, że wreszcie udało Ci się dotrzeć do tego miejsca. Dalej powinno być już tylko z górki.
 </p>
 
-<div class="zagadki" style="display:none;">
+<div class="zagadki_div" style="display:none;">
 <p>
 Ojej... szkoda... naprawdę myślisz, że jesteś jeszcze za słaby?.... &#128532; 
 </p>
@@ -121,18 +121,20 @@ Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej
   
 </div>
 
-<div class="zagadki" style="display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;">
-  <div>
-    <input id="input" />
-    <button id="send_btn" >Wyślij</button>
-  </div>
+<div id="input_div" style="display:none;">
+  <div style="display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;">
+    <div>
+      <input id="input" />
+      <button id="send_btn" >Wyślij</button>
+    </div>
 
-  <div id="tresc">
-    
+    <div id="tresc">
+
+    </div>
+
   </div>
-  
 </div>
 
 <script>
@@ -219,7 +221,8 @@ Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej
   var tak_btn_wrapper = document.querySelector('#tak_btn_wrapper');
   var tak_btn = document.querySelector('#tak_btn');
   var nie_btn = document.querySelector('#nie_btn');
-  var zagadki_div = document.querySelector('.zagadki');
+  var zagadki_div = document.querySelector('#zagadki_div');
+  var input_div = document.querySelector('#input_div');
   var buttony = document.querySelector('#buttony');
   var balls = document.querySelector('#balls');
   var send_btn = document.querySelector('#send_btn');
@@ -240,6 +243,7 @@ Pierwszym hasłem jest rozwiązanie zagadki z koperty - wpisz je w polu poniżej
   
   nie_btn.addEventListener('click', function() {
     zagadki_div.style.display = 'block';
+    input_div.style.display = 'block';
     //buttony.style.transition = 'opacity 1000ms';
     buttony.style.opacity = '0';
     balls.style.opacity = '1';
