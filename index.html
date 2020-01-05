@@ -221,6 +221,7 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do tego miejsca. Dalej powinn
   var tak_btn_wrapper = document.querySelector('#tak_btn_wrapper');
   var tak_btn = document.querySelector('#tak_btn');
   var nie_btn = document.querySelector('#nie_btn');
+  var calosc = document.querySelector('#calosc');
   var zagadki_div = document.querySelector('#zagadki_div');
   var buttony = document.querySelector('#buttony');
   //var balls = document.querySelector('#balls');
@@ -241,12 +242,11 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do tego miejsca. Dalej powinn
   });
   
   nie_btn.addEventListener('click', function() {
+    calosc.classList.add('verticalTranslate');
     zagadki_div.style.display = 'block';
     zagadki_div.style.opacity = '1';
-    zagadki_div.classList.add('verticalTranslateZagadki');
     //buttony.style.transition = 'opacity 1000ms';
     buttony.style.opacity = '0';
-    buttony.classList.add('verticalTranslate');
     //balls.style.opacity = '1';
   });
   
