@@ -445,8 +445,23 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do tego miejsca. Dalej powinn
       showBall(4);
       
       tresc.innerHTML = `
-        <img width='600' src='shenron.jpg'/>
-      `
+      <div style="margin-top: 20px;
+        <p style="font-size=30px; font-weight: bold;">
+          GRATULACJE!!! Odnalazłeś wszystkie smocze kule i pokonałeś swojego najsilniejszegeo przeciwnika!
+        </p>
+        <p>
+          Udowodniłeś, że jesteś godzien otrzymania wspaniałego prezentu!
+        </p>
+        <p>
+          Ale co to?... Czyżby Shenron pokazał się... na strychu???
+        </p>
+      </div>
+      <div>
+      display: flex;
+      justify-content: center;           
+      align-items: center;">
+        <img width='600' src='shenron.png'/>
+      </div>`
     }
     else {
       var rand = Math.round(Math.random() * 100) % 48;
