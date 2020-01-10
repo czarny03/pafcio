@@ -266,13 +266,15 @@ Cieszę się, że wreszcie udało Ci się dotrzeć do tego miejsca. Dalej powinn
   
   function addBallCookie(number) {
       var balls = getCookie('pafcio_balls');
+      var exdate = new Date();
+      exdate.setDate(exdate.getDate() + 10);
       if (balls != "") {
         var found = checkCookie(number);
         if (!found)
-          document.cookie = "pafcio_balls=" + balls + ',' + number;
+          document.cookie = "pafcio_balls=" + balls + ',' + number + '; expires=' + exdate.toUTCString();
       }
       else {
-        document.cookie = "pafcio_balls=" + number;
+        document.cookie = "pafcio_balls=" + number + '; expires=' + exdate.toUTCString();
       }
   }
   
